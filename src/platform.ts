@@ -51,7 +51,7 @@ export class GRLightPlatform implements DynamicPlatformPlugin {
   discoverDevices() {
 
 
-    const devices = this.config.devices as any[];
+    const devices = this.config.devices as Record<string, string>[];
     this.log.debug('Founded devices: ', devices);
 
     // this.accessories.map(a => this.api.unregisterPlatformAccessories(PLUGIN_NAME, PLATFORM_NAME, [a]));
@@ -62,7 +62,7 @@ export class GRLightPlatform implements DynamicPlatformPlugin {
       // generate a unique id for the accessory this should be generated from
       // something globally unique, but constant, for example, the device serial
       // number or MAC address
-      const uuid = this.api.hap.uuid.generate(device.ip);
+      const uuid = this.api.hap.uuid.generate(device.ip as string);
 
       // see if an accessory with the same uuid has already been registered and restored from
       // the cached devices we stored in the `configureAccessory` method above

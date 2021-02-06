@@ -69,7 +69,7 @@ export class GRLightPlatformAccessory {
 
   }
 
-  log = (message: string, ...parameters: any[]) => {
+  log = (message: string, ...parameters: unknown[]) => {
     this.debugMode ? this.platform.log.info(message, parameters) : this.platform.log.debug(message, parameters);
   };
 
@@ -85,7 +85,7 @@ export class GRLightPlatformAccessory {
     this.platform.log.debug('Set Characteristic On ->', value);
 
     fetch(`${this.baseUrl}/${isOn ? 'on' : 'off'}`)
-      .then(_res => callback(null))
+      .then(() => callback(null))
       .catch((err) => {
         this.platform.log.debug(err);
         callback(err);
