@@ -1,5 +1,5 @@
 {
-  "pluginAlias": "ExampleHomebridgePlugin",
+  "pluginAlias": "GRLight",
   "pluginType": "platform",
   "singular": true,
   "schema": {
@@ -10,6 +10,44 @@
         "type": "string",
         "required": true,
         "default": "Example Dynamic Platform"
+      },
+      "debug": {
+        "title": "Enable Debug Logs",
+        "description": "When checked, the plugin will produce extra logs for debugging purposes",
+        "type": "boolean",
+        "default": false,
+        "required": false
+      },
+      "devices": {
+        "type": "array",
+        "items": {
+          "title": "GRLight Device",
+          "type": "object",
+          "properties": {
+            "name": {
+              "name": "Device Name",
+              "type": "string",
+              "required": true
+            },
+            "ip": {
+              "name": "Device IP Address",
+              "type": "string",
+              "required": true
+            },
+            "port": {
+              "name": "Device Web Port",
+              "type": "string",
+              "default": "80",
+              "required": false
+            },
+            "protocol": {
+              "name": "Device Web Protocol",
+              "type": "string",
+              "default": "http",
+              "required": false
+            }
+          }
+        }
       }
     }
   }
