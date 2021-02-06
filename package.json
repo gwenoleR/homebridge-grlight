@@ -1,16 +1,16 @@
 {
-  "private": true,
+  "private": false,
   "displayName": "GR Custom Light",
   "name": "homebridge-grlight",
-  "version": "1.0.0",
-  "description": "A short description about what your plugin does.",
+  "version": "0.0.1",
+  "description": "Homebridge plugin for GRLight device",
   "license": "Apache-2.0",
   "repository": {
     "type": "git",
-    "url": "git://github.com/USERNAME/GITHUB_PROJECT_NAME.git"
+    "url": "git://github.com/gwenoleR/homebridge-grlight.git"
   },
   "bugs": {
-    "url": "https://github.com/USERNAME/GITHUB_PROJECT_NAME/issues"
+    "url": "https://github.com/gwenoleR/homebridge-grlight/issues"
   },
   "engines": {
     "node": ">=10.17.0",
